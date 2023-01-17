@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="828.0" prefWidth="1140.0" style="-fx-background-color: #ddd;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox focusTraversable="true" layoutY="-20.0" prefHeight="682.0" prefWidth="262.0" spacing="5.0" style="-fx-background-color: #2596be;">
+         <children>
+            <Pane prefHeight="328.0" prefWidth="262.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="67.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Downloads/2140177.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="56.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back" textAlignment="CENTER">
+                     <font>
+                        <Font name="Dubai Regular" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="87.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+                     <font>
+                        <Font name="Corbel Light" size="26.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="31.0" layoutY="291.0" prefWidth="200.0" />
+               </children>
+            </Pane>
+            <Button cache="true" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Dashboard">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="215.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Add Medicine">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="505.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="List Medicine">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="215.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Employee">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="343.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Store">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="389.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Transaction">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="588.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Sale">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutY="662.0" prefHeight="170.0" prefWidth="262.0" style="-fx-background-color: #2596be;">
+         <children>
+            <Button layoutX="80.0" layoutY="62.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="103.0" text="Log Out">
+               <font>
+                  <Font name="Dubai Light" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="271.0" layoutY="14.0" prefHeight="359.0" prefWidth="853.0" style="-fx-background-color: #fff;">
+         <children>
+            <Text fill="#444444" fontSmoothingType="LCD" layoutX="70.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name:" wrappingWidth="116.55000305175781">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#444444" fontSmoothingType="LCD" layoutX="70.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name: " wrappingWidth="92.55000305175781">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#444444" fontSmoothingType="LCD" layoutX="451.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="116.55000305175781">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#444444" fontSmoothingType="LCD" layoutX="451.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary:" wrappingWidth="82.55000305175781">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#444444" fontSmoothingType="LCD" layoutX="28.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number: " wrappingWidth="135.0">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#444444" fontSmoothingType="LCD" layoutX="451.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="82.55000305175781">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+            </Text>
+            <TextField layoutX="168.0" layoutY="94.0" prefHeight="38.0" prefWidth="215.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="3.0" />
+               </padding>
+            </TextField>
+            <TextField layoutX="168.0" layoutY="148.0" prefHeight="38.0" prefWidth="215.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="3.0" />
+               </padding>
+            </TextField>
+            <TextField layoutX="540.0" layoutY="204.0" prefHeight="38.0" prefWidth="215.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="3.0" />
+               </padding>
+            </TextField>
+            <TextField layoutX="168.0" layoutY="204.0" prefHeight="38.0" prefWidth="215.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="3.0" />
+               </padding>
+            </TextField>
+            <TextField layoutX="540.0" layoutY="146.0" prefHeight="38.0" prefWidth="215.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="3.0" />
+               </padding>
+            </TextField>
+            <PasswordField layoutX="540.0" layoutY="98.0" prefHeight="38.0" prefWidth="215.0" />
+            <Button layoutX="328.0" layoutY="289.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="193.0" text="Add Employee">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Text layoutX="70.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Employee Account">
+               <font>
+                  <Font name="Dubai Light" size="28.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="271.0" layoutY="414.0" prefHeight="359.0" prefWidth="853.0" style="-fx-background-color: #fff;">
+         <children>
+            <TreeTableView layoutY="73.0" prefHeight="288.0" prefWidth="853.0">
+              <columns>
+                <TreeTableColumn prefWidth="116.0" text="User Name" />
+                <TreeTableColumn prefWidth="149.0" text="Full Name" />
+                  <TreeTableColumn minWidth="0.0" prefWidth="143.0" text="E-mail" />
+                  <TreeTableColumn minWidth="0.0" prefWidth="96.0" text="Password" />
+                  <TreeTableColumn minWidth="0.0" prefWidth="84.0" text="Salary" />
+                  <TreeTableColumn minWidth="0.0" prefWidth="102.0" text="Phone Number" />
+                  <TreeTableColumn prefWidth="162.0" text="Address" />
+              </columns>
+            </TreeTableView>
+            <Text layoutX="67.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Employees">
+               <font>
+                  <Font name="Dubai Light" size="28.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
