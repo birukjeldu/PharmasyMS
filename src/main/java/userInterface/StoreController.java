@@ -6,61 +6,32 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class StoreController {
+public class StoreController extends SwitchScene {
     @FXML
-    private Button button;
+    private TextField storeAddress;
     @FXML
-    void addMedicinePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Add-Medicine.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Add Medicine");
-        stage.setScene(root);
+    private TextField storeName;
 
-    }
 
     @FXML
-    void listMedicinePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("List-Medicine.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("List Of Medicine");
-        stage.setScene(root);
-    }
+    void addStore(ActionEvent event) {
+        //Store Name validation
+        if (Validator.isOnlyString(storeName,storeName.getText()) && Validator.isValidString(storeName,storeName.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
 
-    @FXML
-    void salePage(ActionEvent event) {
-
-    }
-
-    @FXML
-    void storePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Store.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Store");
-        stage.setScene(root);
-    }
-
-    @FXML
-    void transactionPage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Transaction.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Transaction");
-        stage.setScene(root);
-    }
-
-    @FXML
-    void employePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Employees");
-        stage.setScene(root);
+        //Store Address validation
+        if (Validator.isOnlyString(storeAddress,storeAddress.getText()) && Validator.isValidString(storeAddress,storeAddress.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
     }
 }

@@ -7,63 +7,73 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import userInterface.Validator;
 
-public class EmployeeController {
+public class EmployeeController extends SwitchScene {
 
-    @FXML
-    private Button button;
-    @FXML
-    void addMedicinePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Add-Medicine.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Add Medicine");
-        stage.setScene(root);
-
-    }
+    // end of
 
     @FXML
-    void listMedicinePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("List-Medicine.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("List Of Medicine");
-        stage.setScene(root);
-    }
+    private TextField address;
+    @FXML
+    private TextField fullName;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private TextField phoneNumber;
+    @FXML
+    private TextField salary;
+    @FXML
+    private TextField userName;
 
     @FXML
-    void salePage(ActionEvent event) {
+    void addEmployeeButton(ActionEvent event) {
+        //User Name validation
+        if (Validator.isOnlyStringNoSpace(userName,userName.getText()) && Validator.isValidString(userName,userName.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
 
-    }
+        //Full Name validation
+        if (Validator.isOnlyString(fullName,fullName.getText()) && Validator.isValidString(fullName,fullName.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
 
-    @FXML
-    void storePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Store.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Store");
-        stage.setScene(root);
-    }
+        //Address validation
+        if (Validator.isOnlyString(address,address.getText()) && Validator.isValidString(address,address.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
 
-    @FXML
-    void transactionPage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Transaction.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Transaction");
-        stage.setScene(root);
-    }
+        //Password validation
+        if (Validator.isValidString(password,password.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
 
-    @FXML
-    void employePage(ActionEvent event) throws IOException {
-        Stage stage = (Stage)button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee.fxml"));
-        Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Transaction");
-        stage.setScene(root);
+        //Salary validation
+        if (Validator.isValidFloat(salary,salary.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
+
+        //Phone number validation
+        if (Validator.isValidPhoneNumber(phoneNumber,phoneNumber.getText())){
+            System.out.println("yea it is validd");
+        }else {
+            System.out.println("nooo bitch");
+        }
     }
 
 }

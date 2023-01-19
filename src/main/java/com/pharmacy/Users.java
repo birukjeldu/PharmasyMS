@@ -1,11 +1,11 @@
 package com.pharmacy;
 
 public class Users {
-    private String userName;
-    private String fullName;
-    private String email;
-    private char sex;
-    private String password;
+    protected String userName;
+    protected String fullName;
+    protected String email;
+    protected char sex;
+    protected String password;
 
 
     public Users(String userName, String fullName, String email, char sex, String password){

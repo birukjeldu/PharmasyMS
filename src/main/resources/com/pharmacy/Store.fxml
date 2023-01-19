@@ -154,20 +154,23 @@
                                     <Font name="Dubai Light" size="29.0" />
                                  </font>
                               </Text>
-                              <TextField layoutX="278.0" layoutY="84.0" prefHeight="35.0" prefWidth="277.0" promptText="Store Name">
+                              <TextField fx:id="storeName" layoutX="278.0" layoutY="84.0" prefHeight="35.0" prefWidth="277.0" promptText="Store Name">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <TextField layoutX="278.0" layoutY="130.0" prefHeight="35.0" prefWidth="277.0" promptText="Store Address">
+                              <TextField fx:id="storeAddress" layoutX="278.0" layoutY="130.0" prefHeight="35.0" prefWidth="277.0" promptText="Store Address">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <Button layoutX="367.0" layoutY="191.0" mnemonicParsing="false" prefWidth="99.0" text="Add">
+                              <Button layoutX="367.0" layoutY="191.0" mnemonicParsing="false" onAction="#addStore" prefWidth="99.0" text="Add">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
                            </children>
                         </AnchorPane>
@@ -192,16 +195,25 @@
                                  <font>
                                     <Font size="14.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
                               <Button layoutX="692.0" layoutY="201.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="113.0" text="View Store">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
                               <Button layoutX="692.0" layoutY="98.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="113.0" text="Edit Store">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
                            </children></AnchorPane>
                   </content>
