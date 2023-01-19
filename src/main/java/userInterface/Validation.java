@@ -1,2 +1,4 @@
-package userInterface;public class Validation {
+package userInterface;
+
+public class Validation {
 }
