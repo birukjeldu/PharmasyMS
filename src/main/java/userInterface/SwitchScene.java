@@ -14,6 +14,9 @@ public class SwitchScene {
     @FXML
     private Button button;
     @FXML
+    private Button logout;
+
+    @FXML
     void addMedicinePage(ActionEvent event) throws IOException {
         Stage stage = (Stage)button.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Add-Medicine.fxml"));
@@ -59,6 +62,15 @@ public class SwitchScene {
     void employePage(ActionEvent event) throws IOException {
         Stage stage = (Stage)button.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee.fxml"));
+        Scene root = new Scene(fxmlLoader.load());
+        stage.setTitle("Transaction");
+        stage.setScene(root);
+    }
+
+    @FXML
+    void loginPage(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
         Scene root = new Scene(fxmlLoader.load());
         stage.setTitle("Transaction");
         stage.setScene(root);

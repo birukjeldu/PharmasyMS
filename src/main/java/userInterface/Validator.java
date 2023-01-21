@@ -1,7 +1,10 @@
 package userInterface;
 
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import java.time.LocalDate;
 
 public class Validator {
     public static boolean isValidInt(TextField in, String str){
@@ -79,6 +82,16 @@ public class Validator {
 
     public static boolean isValidPhoneNumber(TextField in, String str){
         if (!in.getText().matches("^[0-9]{8,10}$")){
+            in.setStyle("-fx-border-color:red");
+            return false;
+        }else{
+            in.setStyle("-fx-border-color:green");
+            return true;
+        }
+    }
+
+    public static boolean isValidDate(DatePicker in, LocalDate date){
+        if (in.getValue() == null){
             in.setStyle("-fx-border-color:red");
             return false;
         }else{

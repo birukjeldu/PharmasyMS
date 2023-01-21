@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -130,7 +131,7 @@
       </VBox>
       <Pane layoutY="662.0" prefHeight="170.0" prefWidth="262.0" style="-fx-background-color: #2596be;">
          <children>
-            <Button layoutX="80.0" layoutY="62.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="103.0" text="Log Out">
+            <Button layoutX="80.0" layoutY="62.0" mnemonicParsing="false" onAction="#loginPage" prefHeight="44.0" prefWidth="103.0" text="Log Out">
                <font>
                   <Font name="Dubai Light" size="18.0" />
                </font>
@@ -140,7 +141,7 @@
             </Button>
          </children>
       </Pane>
-      <AnchorPane layoutX="271.0" layoutY="14.0" prefHeight="359.0" prefWidth="853.0" style="-fx-background-color: #fff;">
+      <AnchorPane layoutX="271.0" layoutY="14.0" prefHeight="385.0" prefWidth="853.0" style="-fx-background-color: #fff;">
          <children>
             <Text fill="#444444" fontSmoothingType="LCD" layoutX="70.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name:" wrappingWidth="116.55000305175781">
                <font>
@@ -213,7 +214,7 @@
                </padding>
             </TextField>
             <PasswordField fx:id="password" layoutX="540.0" layoutY="98.0" prefHeight="38.0" prefWidth="215.0" />
-            <Button layoutX="328.0" layoutY="289.0" mnemonicParsing="false" onAction="#addEmployeeButton" prefHeight="56.0" prefWidth="193.0" text="Add Employee">
+            <Button layoutX="369.0" layoutY="333.0" mnemonicParsing="false" onAction="#addEmployeeButton" prefHeight="38.0" prefWidth="165.0" text="Add Employee">
                <font>
                   <Font size="16.0" />
                </font>
@@ -226,6 +227,24 @@
                   <Font name="Dubai Light" size="28.0" />
                </font>
             </Text>
+            <TextField fx:id="email" layoutX="168.0" layoutY="257.0" prefHeight="38.0" prefWidth="215.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="3.0" />
+               </padding>
+            </TextField>
+            <Text fill="#444444" fontSmoothingType="LCD" layoutX="28.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail Address:" wrappingWidth="135.0">
+               <font>
+                  <Font name="Dubai Regular" size="18.0" />
+               </font>
+            </Text>
+            <Label fx:id="succesMessge" layoutX="509.0" layoutY="22.0" textFill="#0cbf24">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="271.0" layoutY="414.0" prefHeight="359.0" prefWidth="853.0" style="-fx-background-color: #fff;">
@@ -240,20 +259,20 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="711.0" layoutY="21.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="113.0" text="Remove Employee">
+            <Button layoutX="711.0" layoutY="21.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Remove Employee">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView layoutY="80.0" prefHeight="317.0" prefWidth="853.0">
+            <TableView fx:id="employeeTable" layoutY="80.0" prefHeight="317.0" prefWidth="853.0">
                <columns>
-                  <TableColumn prefWidth="108.0" text="User Name" />
-                  <TableColumn prefWidth="110.0" text="Full Name" />
-                  <TableColumn prefWidth="141.0" text="E-mail" />
-                  <TableColumn prefWidth="110.0" text="Password" />
-                  <TableColumn prefWidth="95.0" text="Salary" />
-                  <TableColumn prefWidth="159.0" text="Phone Number" />
-                  <TableColumn prefWidth="129.0" text="Address" />
+                  <TableColumn fx:id="usrNameColumn" prefWidth="108.0" text="User Name" />
+                  <TableColumn fx:id="nameColumn" prefWidth="110.0" text="Full Name" />
+                  <TableColumn fx:id="emailColumn" prefWidth="141.0" text="E-mail" />
+                  <TableColumn fx:id="passColumn" prefWidth="110.0" text="Password" />
+                  <TableColumn fx:id="salaryColumn" prefWidth="95.0" text="Salary" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="159.0" text="Phone Number" />
+                  <TableColumn fx:id="addressColumn" prefWidth="129.0" text="Address" />
                </columns>
             </TableView>
          </children>

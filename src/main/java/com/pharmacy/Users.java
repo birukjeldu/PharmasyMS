@@ -1,19 +1,37 @@
 package com.pharmacy;
 
-public class Users {
+abstract public class Users {
     protected String userName;
     protected String fullName;
     protected String email;
     protected char sex;
     protected String password;
+    protected String phoneNumber;
 
 
-    public Users(String userName, String fullName, String email, char sex, String password){
+    Users(String userName, String fullName, String email, char sex, String password,String phoneNumber){
         this.userName = userName;
         this.fullName = fullName;
         this.email = email;
         this.sex = sex;
         this.password = password;
+        this.phoneNumber = phoneNumber;
+    }
+    Users(String fullName, String email, char sex,String phoneNumber){
+        this.fullName = fullName;
+        this.email = email;
+        this.sex = sex;
+        this.phoneNumber = phoneNumber;
+    }
+    Users(String userName,String fullName, String email, char sex,String phoneNumber){
+        this.userName = userName;
+        this.fullName = fullName;
+        this.email = email;
+        this.sex = sex;
+        this.phoneNumber = phoneNumber;
+    }
+    Users(){
+
     }
 
     public String getUserName(){

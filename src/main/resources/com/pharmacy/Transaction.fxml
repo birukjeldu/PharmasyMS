@@ -128,7 +128,7 @@
       </VBox>
       <Pane layoutY="662.0" prefHeight="166.0" prefWidth="262.0" style="-fx-background-color: #2596be;">
          <children>
-            <Button layoutX="80.0" layoutY="62.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="103.0" text="Log Out">
+            <Button layoutX="80.0" layoutY="62.0" mnemonicParsing="false" onAction="#loginPage" prefHeight="44.0" prefWidth="103.0" text="Log Out">
                <font>
                   <Font name="Dubai Light" size="18.0" />
                </font>

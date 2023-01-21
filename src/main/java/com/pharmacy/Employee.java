@@ -2,14 +2,14 @@ package com.pharmacy;
 
 public class Employee extends Users{
     private double salary;
-    private String phoneNumber;
     private String address;
 
+    public Employee (){
 
+    }
     public  Employee(String userName,String fullName,String email,char sex,String password,double salary,String phoneNumber,String address){
-        super(userName,fullName,email,sex,password);
+        super(userName,fullName,email,sex,password,phoneNumber);
         this.salary = salary;
-        this.phoneNumber = phoneNumber;
         this.address = address;
     }
 

@@ -75,9 +75,16 @@ public class addMedicineController extends SwitchScene {
             priceError.setText("Only Numbers allowed");
         }
         //Expire Date validation
-        LocalDate exDate = expDate.getValue();
-        String formatedDate = exDate.format(DateTimeFormatter.ofPattern("MMM-dd-yyyy"));
-        System.out.println(formatedDate);
+        if (Validator.isValidDate(expDate,expDate.getValue())){
+            LocalDate exDate = expDate.getValue();
+            String formatedDate = exDate.format(DateTimeFormatter.ofPattern("MMM-dd-yyyy"));
+            System.out.println(formatedDate);
+        }else {
+            System.out.println("nooo bitch");
+        }
+
+
+
     }
 
 }

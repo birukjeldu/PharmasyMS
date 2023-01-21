@@ -53,6 +53,14 @@
                            </image>
                         </ImageView>
                         <Text fx:id="test" layoutX="152.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="325.13671875" />
+                        <Button contentDisplay="TOP" layoutX="243.0" layoutY="430.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="41.0" prefWidth="138.0" text="Register" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                      </children>
                   </AnchorPane>
                </content>
