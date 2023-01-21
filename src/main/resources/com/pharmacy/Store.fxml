@@ -43,7 +43,7 @@
                   <Separator layoutX="31.0" layoutY="291.0" prefWidth="200.0" />
                </children>
             </Pane>
-            <Button cache="true" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Dashboard">
+            <Button cache="true" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#dashboardPage" prefHeight="42.0" prefWidth="311.0" text="Dashboard">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -54,7 +54,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="215.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#addMedicinePage" prefHeight="42.0" prefWidth="311.0" text="Add Medicine">
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="215.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#customerPage" prefHeight="42.0" prefWidth="311.0" text="Customer">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -65,7 +65,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="505.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#listMedicinePage" prefHeight="42.0" prefWidth="311.0" text="List Medicine">
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="505.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#listMedicinePage" prefHeight="42.0" prefWidth="311.0" text="Medicine">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

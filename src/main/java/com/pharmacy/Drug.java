@@ -9,7 +9,7 @@ public class Drug {
     private int amount;
     private double price;
     //to give a unique number to the ID
-    private static int count;
+    public static int count;
 
     public Drug(){
         id = count;

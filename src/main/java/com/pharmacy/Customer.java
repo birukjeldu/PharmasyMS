@@ -10,6 +10,9 @@ public class Customer extends Users{
         this.doctorName = doctorName;
         this.hospitalName = hospitalName;
     }
+    public Customer(){
+
+    }
 
 
     public String getDoctorName() {

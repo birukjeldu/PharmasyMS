@@ -73,4 +73,12 @@ abstract public class Users {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 }

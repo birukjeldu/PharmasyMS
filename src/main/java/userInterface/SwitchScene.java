@@ -22,6 +22,18 @@ public class SwitchScene {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Add-Medicine.fxml"));
         Scene root = new Scene(fxmlLoader.load());
         stage.setTitle("Add Medicine");
+        stage.setResizable(false);
+        stage.setScene(root);
+
+    }
+
+    @FXML
+    void customerPage(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Customer.fxml"));
+        Scene root = new Scene(fxmlLoader.load());
+        stage.setTitle("Customer");
+        stage.setResizable(false);
         stage.setScene(root);
 
     }
@@ -31,7 +43,8 @@ public class SwitchScene {
         Stage stage = (Stage)button.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("List-Medicine.fxml"));
         Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("List Of Medicine");
+        stage.setTitle("Medicine");
+        stage.setResizable(false);
         stage.setScene(root);
     }
 
@@ -46,6 +59,7 @@ public class SwitchScene {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Store.fxml"));
         Scene root = new Scene(fxmlLoader.load());
         stage.setTitle("Store");
+        stage.setResizable(false);
         stage.setScene(root);
     }
 
@@ -63,7 +77,8 @@ public class SwitchScene {
         Stage stage = (Stage)button.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee.fxml"));
         Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Transaction");
+        stage.setTitle("Employee");
+        stage.setResizable(false);
         stage.setScene(root);
     }
 
@@ -72,7 +87,19 @@ public class SwitchScene {
         Stage stage = (Stage)button.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
         Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Transaction");
+        stage.setTitle("Log In");
+        stage.setResizable(false);
+        stage.setScene(root);
+    }
+
+    @FXML
+    void dashboardPage(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Dashboard.fxml"));
+        Scene root = new Scene(fxmlLoader.load());
+        stage.setTitle("Dashboard");
+        stage.setResizable(false);
         stage.setScene(root);
     }
 }
+

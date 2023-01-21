@@ -66,8 +66,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
     @FXML
     private TableColumn<Employee, String> passColumn;
     ObservableList<Employee> list = FXCollections.observableArrayList(
-            new Employee("userName","fullName","email",'a',"password",2599,"phoneNumber","address"),
-            new Employee("biruk","Biruk Jeldu","biruk@gmail.com",'m',"12345",7000,"0945020129","Jimma")
+
     );
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -79,11 +78,21 @@ public class EmployeeController extends SwitchScene implements Initializable {
         passColumn.setCellValueFactory(new PropertyValueFactory<Employee,String>("password"));
         salaryColumn.setCellValueFactory(new PropertyValueFactory<Employee,Double>("salary"));
         employeeTable.setItems(list);
+        File f = new File("Employee.json");
+        if(f.exists()){
+            try {
+                readFromJson();
+            } catch (IOException | ParseException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
     }
     Employee employee = new Employee();
     //To add an employee account
     @FXML
-    void addEmployeeButton(ActionEvent event) {
+    void addEmployeeButton(ActionEvent event) throws IOException, ParseException {
 
 
         employee.setSex('M');
@@ -96,7 +105,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             usrNameValid = true;
             System.out.println("yea it is validd");
         }else {
-            System.out.println("nooo bitch");
+            System.out.println("nooo");
             usrNameValid = false;
         }
 
@@ -107,7 +116,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             System.out.println("yea it is validd");
         }else {
             fulNameValid = false;
-            System.out.println("nooo bitch");
+            System.out.println("nooo");
         }
 
         //Address validation
@@ -117,7 +126,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             System.out.println("yea it is validd");
         }else {
             addressValid = false;
-            System.out.println("nooo bitch");
+            System.out.println("nooo");
         }
 
         //Password validation
@@ -127,7 +136,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             System.out.println("yea it is validd");
         }else {
             passValid = false;
-            System.out.println("nooo bitch");
+            System.out.println("nooo");
         }
         //Email validation
         if (Validator.isValidString(email,email.getText())){
@@ -136,7 +145,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             System.out.println("yea it is validd");
         }else {
             emailValid = false;
-            System.out.println("nooo bitch");
+            System.out.println("nooo ");
         }
 
         //Salary validation
@@ -147,7 +156,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             System.out.println("yea it is validd");
         }else {
             salValid = false;
-            System.out.println("nooo bitch");
+            System.out.println("nooo");
         }
 
         //Phone number validation
@@ -157,7 +166,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             System.out.println("yea it is validd");
         }else {
             phoneValid = false;
-            System.out.println("nooo bitch");
+            System.out.println("nooo");
         }
         boolean allValid = usrNameValid && fulNameValid && emailValid && passValid && addressValid && salValid && phoneValid;
         if(allValid){
@@ -178,6 +187,7 @@ public class EmployeeController extends SwitchScene implements Initializable {
             userName.setText("");
             userName.setStyle("-fx-border-color: ");
             writeToJsonfile();
+
 
         }
     }
@@ -215,6 +225,38 @@ public class EmployeeController extends SwitchScene implements Initializable {
             throw new RuntimeException(e);
         }
         System.out.println(jsonArray);
+    }
+
+    //To read the Employee list from the json and displaying it to the table
+    public void readFromJson() throws IOException, ParseException {
+
+        JSONParser jsonParser = new JSONParser();
+        Object object = jsonParser.parse(new FileReader("Employee.json"));
+        JSONArray jsonArray1 = (JSONArray) object;
+        JSONObject obj  = new JSONObject();
+        int size = jsonArray1.size();
+        for (int i = 0; i < size; i++) {
+            Employee emp = new Employee();
+            JSONObject tes = (JSONObject) jsonArray1.get(i);
+            System.out.println(tes.get("Salary"));
+            emp.setSalary(Double.parseDouble(tes.get("Salary").toString()));
+            System.out.println(tes.get("Email"));
+            emp.setEmail(tes.get("Email").toString());
+            System.out.println(tes.get("Address"));
+            emp.setAddress(tes.get("Address").toString());
+            System.out.println(tes.get("Username"));
+            emp.setUserName(tes.get("Username").toString());
+            System.out.println(tes.get("FullName"));
+            emp.setFullName(tes.get("FullName").toString());
+            System.out.println(tes.get("PhoneNumber"));
+            emp.setPhoneNumber(tes.get("PhoneNumber").toString());
+            System.out.println(tes.get("Password"));
+            emp.setPassword(tes.get("Password").toString());
+            employeeTable.getItems().add(emp);
+            System.out.println("-------------------------------");
+
+        }
+
     }
 
 }

@@ -1,5 +1,10 @@
 package userInterface;
 import com.pharmacy.Employee;
+import com.pharmacy.HelloApplication;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import javafx.event.ActionEvent;
@@ -13,14 +18,17 @@ import org.json.simple.parser.ParseException;
 import java.io.*;
 
 public class LoginController {
-
     @FXML
     private PasswordField adminPassword;
+    @FXML
+    private Button button;
     @FXML
     private TextField adminUserName;
     @FXML
     private Text test;
     JSONArray jsonArray = new JSONArray();
+    public static String profName;
+
     @FXML
     void onLoginButtonClick(ActionEvent event) {
 
@@ -29,54 +37,42 @@ public class LoginController {
         Object ob = null;
         JSONParser jp = new JSONParser();
         try{
-            FileReader file = new FileReader("User.json");
+            FileReader file = new FileReader("Admin.json");
             ob= jp.parse(file);
             file.close();
             jsonArray = (JSONArray) ob;
         } catch (IOException | ParseException e) {throw new RuntimeException(e);}
 
-        JSONObject obj  = new JSONObject();
+
         int size = jsonArray.size();
-        obj.put("Username",adminUserName.getText());
-        obj.put("Password",adminPassword.getText());
+        String usrName = adminUserName.getText();
+        String pas = adminPassword.getText();
         for (int i = 0; i < size; i++) {
-            if(obj.equals(jsonArray.get(i))){
-                System.out.println("It matched you poco loco");
+            JSONObject obj= (JSONObject) jsonArray.get(i);
+            if(usrName.equals(obj.get("Username")) && pas.equals(obj.get("Password"))){
+                System.out.println("It matched");
+                profName = obj.get("Username").toString();
+                Stage stage = (Stage)button.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Dashboard.fxml"));
+                Scene root = null;
+                try {
+                    root = new Scene(fxmlLoader.load());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                stage.setTitle("Dashboard");
+                stage.setResizable(false);
+                stage.setScene(root);
                 break;
             }else if(i== size-1){
-                System.out.println("Puta nooooo");
+                adminUserName.setStyle("-fx-border-color: red");
+                adminPassword.setStyle("-fx-border-color: red");
+                System.out.println("nooooo");
             }
         }
 
     }
-    @FXML
-    void onRegisterButtonClick(ActionEvent event) {
-        JSONObject obj  = new JSONObject();
-        obj.put("Username",adminUserName.getText());
-        obj.put("Password",adminPassword.getText());
-        jsonArray.add(obj);
-        try{
-            File f = new File("User.json");
-            if(!f.exists()){
-                FileWriter file = new FileWriter("User.json");
-                file.write(jsonArray.toJSONString());
-                file.close();
-            }else{
-                JSONParser jsonParser = new JSONParser();
-                Object object = jsonParser.parse(new FileReader("User.json"));
-                JSONArray jsonArray1 = (JSONArray) object;
-                jsonArray1.add(obj);
-                FileWriter file = new FileWriter("User.json");
-                file.write(jsonArray1.toJSONString());
-                file.flush();
-                file.close();
-            }
-
-        }catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(jsonArray);
+    public static String getProfName() {
+        return profName;
     }
 }
