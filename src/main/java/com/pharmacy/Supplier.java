@@ -6,13 +6,17 @@ public class Supplier {
     private String address;
     private String email;
     private String phoneNumber;
+    public static int count;
 
-    public Supplier(int id,String name,String address,String email,String phoneNumber){
-        this.id = id;
+    public Supplier(String name,String address,String email,String phoneNumber){
         this.name = name;
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
+    }
+    public Supplier(){
+        id = count;
+        count++;
     }
 
     public void setId(int id) {

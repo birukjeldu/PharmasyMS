@@ -98,11 +98,11 @@ public class DashboardController extends SwitchScene implements Initializable {
         }
 
         totalEmployee.setText(String.valueOf(totalEmployee("Employee.json")));
-        totalCustomer.setText(String.valueOf(totalEmployee("Employee.json")));
+        totalCustomer.setText(String.valueOf(totalEmployee("Customer.json")));
         totalMedicine.setText(String.valueOf(totalEmployee("Medicine.json")));
         totalSale.setText(String.valueOf(totalEmployee("Employee.json")));
-        totalSuppliers.setText(String.valueOf(totalEmployee("Employee.json")));
-        totalTransaction.setText(String.valueOf(totalEmployee("Employee.json")));
+        totalSuppliers.setText(String.valueOf(totalEmployee("Supplier.json")));
+        totalTransaction.setText(String.valueOf(totalEmployee("Transaction.json")));
 
 
     }

@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -51,6 +52,11 @@ public class listMedicineController extends SwitchScene implements Initializable
     private Label amountError;
     @FXML
     private Button button;
+    @FXML
+    private String pfName;
+
+    @FXML
+    private Text profileName;
 
     @FXML
     private TableView<Drug> medTable;
@@ -82,6 +88,8 @@ public class listMedicineController extends SwitchScene implements Initializable
         medNameColumn.setCellValueFactory(new PropertyValueFactory<Drug,String>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Drug,Double>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Drug,Integer>("amount"));
+        pfName = "@"+LoginController.getProfName() ;
+        profileName.setText(pfName);
         medTable.setItems(list);
         File f = new File("Medicine.json");
         if(f.exists()){

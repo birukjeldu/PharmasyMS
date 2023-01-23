@@ -35,7 +35,7 @@
                         <Font name="Dubai Regular" size="29.0" />
                      </font>
                   </Text>
-                  <Text layoutX="87.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+                  <Text fx:id="profileName" layoutX="87.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
                      <font>
                         <Font name="Corbel Light" size="26.0" />
                      </font>
@@ -94,7 +94,7 @@
                   </InnerShadow>
                </effect>
             </Button>
-            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="343.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#storePage" prefHeight="42.0" prefWidth="311.0" text="Store">
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="343.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#storePage" prefHeight="42.0" prefWidth="311.0" text="Supplier">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

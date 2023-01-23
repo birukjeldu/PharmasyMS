@@ -2,13 +2,13 @@ package com.pharmacy;
 
 public class Customer extends Users{
     private String prescription;
-    private String doctorName;
-    private String hospitalName;
+    //private String doctorName;
+    //private String hospitalName;
     Customer(String fullName, String email, char sex,String phoneNumber,String prescription,String doctorName,String hospitalName){
         super(fullName,email,sex,phoneNumber);
         this.prescription = prescription;
-        this.doctorName = doctorName;
-        this.hospitalName = hospitalName;
+        //this.doctorName = doctorName;
+        //this.hospitalName = hospitalName;
     }
     public Customer(){
 
@@ -16,11 +16,11 @@ public class Customer extends Users{
 
 
     public String getDoctorName() {
-        return doctorName;
+        return "";
     }
 
     public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
+        //this.doctorName = doctorName;
     }
 
     public String getPrescription() {
@@ -32,10 +32,10 @@ public class Customer extends Users{
     }
 
     public String getHospitalName() {
-        return hospitalName;
+        return "";
     }
 
     public void setHospitalName(String hospitalName) {
-        this.hospitalName = hospitalName;
+        //this.hospitalName = hospitalName;
     }
 }

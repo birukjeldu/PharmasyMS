@@ -3,20 +3,15 @@ package com.pharmacy;
 import java.util.Date;
 
 public class Transaction {
-    private Drug drug;
+    private int id;
+    private String drugName;
+    private String manuName;
+    private double price =0;
     private int quantity;
     private Date date;
 
     public Transaction(){
         date = new Date();
-    }
-
-    public Drug getDrug(){
-        return drug;
-    }
-
-    public void setDrug(Drug drug){
-        this.drug = drug;
     }
 
     public int getQuantity(){
@@ -29,5 +24,26 @@ public class Transaction {
 
     public Date getDate(){
         return date;
+    }
+    public int getId() {
+        return id;
+    }
+    public String getDrugName() {
+        return drugName;
+    }
+    public void setDrugName(String drugName) {
+        this.drugName = drugName;
+    }
+    public String getManuName() {
+        return manuName;
+    }
+    public void setManuName(String manuName) {
+        this.manuName = manuName;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -47,9 +48,12 @@ public class EmployeeController extends SwitchScene implements Initializable {
     @FXML
     private TextField userName;
 
+
     @FXML
-    private Label succesMessge;
+    private String pfName;
+
     @FXML
+    private Text profileName;    @FXML
     private TableView<Employee> employeeTable;
     @FXML
     private TableColumn<Employee, String> nameColumn;
@@ -77,6 +81,8 @@ public class EmployeeController extends SwitchScene implements Initializable {
         phoneColumn.setCellValueFactory(new PropertyValueFactory<Employee,String>("phoneNumber"));
         passColumn.setCellValueFactory(new PropertyValueFactory<Employee,String>("password"));
         salaryColumn.setCellValueFactory(new PropertyValueFactory<Employee,Double>("salary"));
+        pfName = "@"+LoginController.getProfName() ;
+        profileName.setText(pfName);
         employeeTable.setItems(list);
         File f = new File("Employee.json");
         if(f.exists()){

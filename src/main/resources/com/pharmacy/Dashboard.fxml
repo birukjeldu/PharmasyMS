@@ -96,7 +96,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="343.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#storePage" prefHeight="42.0" prefWidth="311.0" text="Store">
+            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="343.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#storePage" prefHeight="42.0" prefWidth="311.0" text="Supplier">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

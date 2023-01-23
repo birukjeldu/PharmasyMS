@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +16,8 @@ public class SwitchScene {
     private Button button;
     @FXML
     private Button logout;
+
+
 
     @FXML
     void addMedicinePage(ActionEvent event) throws IOException {
@@ -58,7 +61,7 @@ public class SwitchScene {
         Stage stage = (Stage)button.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Store.fxml"));
         Scene root = new Scene(fxmlLoader.load());
-        stage.setTitle("Store");
+        stage.setTitle("Supplier");
         stage.setResizable(false);
         stage.setScene(root);
     }
@@ -98,6 +101,46 @@ public class SwitchScene {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Dashboard.fxml"));
         Scene root = new Scene(fxmlLoader.load());
         stage.setTitle("Dashboard");
+        stage.setResizable(false);
+        stage.setScene(root);
+    }
+
+    @FXML
+    void empCustomerPage(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee-Customer.fxml"));
+        Scene root = new Scene(fxmlLoader.load());
+        stage.setTitle("Customer");
+        stage.setResizable(false);
+        stage.setScene(root);
+    }
+
+    @FXML
+    void empListMedicinePage(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee-Medicine.fxml"));
+        Scene root = new Scene(fxmlLoader.load());
+        stage.setTitle("List of Medicine");
+        stage.setResizable(false);
+        stage.setScene(root);
+    }
+
+    @FXML
+    void empTransactionPage(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee-Transaction.fxml"));
+        Scene root = new Scene(fxmlLoader.load());
+        stage.setTitle("Transaction");
+        stage.setResizable(false);
+        stage.setScene(root);
+    }
+
+    @FXML
+    void sellMedPage(ActionEvent event) throws IOException {
+        Stage stage = (Stage)button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sell-Medicine.fxml"));
+        Scene root = new Scene(fxmlLoader.load());
+        stage.setTitle("Sell Medicine");
         stage.setResizable(false);
         stage.setScene(root);
     }
