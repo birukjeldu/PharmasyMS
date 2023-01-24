@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -34,8 +35,8 @@ import java.util.ResourceBundle;
 public class listMedicineController extends SwitchScene implements Initializable {
     @FXML
     private DatePicker expDate;
-    @FXML
-    private TextField manuName;
+    //@FXML
+    //private TextField manuName;
     //@FXML
     //private Button medAddButton;
     @FXML
@@ -54,7 +55,8 @@ public class listMedicineController extends SwitchScene implements Initializable
     private Button button;
     @FXML
     private String pfName;
-
+    @FXML
+    private ChoiceBox<String> manuNameSelectOption;
     @FXML
     private Text profileName;
 
@@ -99,6 +101,7 @@ public class listMedicineController extends SwitchScene implements Initializable
                 throw new RuntimeException(e);
             }
         }
+        ted();
 
 
     }
@@ -152,12 +155,21 @@ public class listMedicineController extends SwitchScene implements Initializable
             System.out.println("nooo");
         }
         //Manufacture name validation
-        if (Validator.isValidString(manuName,manuName.getText())){
+       /* if (Validator.isValidString(manuName,manuName.getText())){
             drug.setManufacturer(manuName.getText());
             drugManuValid = true;
             System.out.println("yea it is validd");
         }else
+            drugManuValid = false;*/
+        if(manuNameSelectOption.getValue() != null){
+            drug.setManufacturer(manuNameSelectOption.getValue().toString());
+            drugManuValid = true;
+            manuNameSelectOption.setStyle("-fx-border-color:");
+        }else{
             drugManuValid = false;
+            manuNameSelectOption.setStyle("-fx-border-color:red");
+        }
+
         //Description validation
         if (Validator.isValidString(medDescription,medDescription.getText())){
             drug.setDescription(medDescription.getText());
@@ -205,8 +217,8 @@ public class listMedicineController extends SwitchScene implements Initializable
         if(allValid){
             //succesMessge.setText("Successfully Added An Drug");
             //employeeTable.getItems().add(employee);
-            manuName.setText("");
-            manuName.setStyle("-fx-border-color: ");
+            //manuName.setText("");
+            //manuName.setStyle("-fx-border-color: ");
             //expDate.set("");
             expDate.setStyle("-fx-border-color: ");
             medAmount.setText("");
@@ -272,6 +284,29 @@ public class listMedicineController extends SwitchScene implements Initializable
             throw new RuntimeException(e);
         }
         System.out.println(jsonArray);
+    }
+
+    public void ted(){
+        ArrayList listOfMed = new ArrayList<String>();
+        JSONParser jsonParser = new JSONParser();
+        Object object = null;
+        try {
+            object = jsonParser.parse(new FileReader("Supplier.json"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        JSONArray jsonArray1 = (JSONArray) object;
+        JSONObject obj = new JSONObject();
+        int size = jsonArray1.size();
+        for (int i = 0; i < size; i++) {
+            JSONObject tes = (JSONObject) jsonArray1.get(i);
+            listOfMed.add(tes.get("SupplierName"));
+
+        }
+        manuNameSelectOption.getItems().addAll(listOfMed);
+        System.out.println(listOfMed);
     }
 
 }

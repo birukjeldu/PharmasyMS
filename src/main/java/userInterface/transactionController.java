@@ -61,12 +61,12 @@ public class transactionController extends SwitchScene implements Initializable 
     );
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        priceColumn.setCellValueFactory(new PropertyValueFactory<Transaction,Double>("Price"));
-        medNameColumn.setCellValueFactory(new PropertyValueFactory<Transaction,String>("DrugName"));
-        manuColumn.setCellValueFactory(new PropertyValueFactory<Transaction,String>("DrugManufacturer"));
-        idColumn.setCellValueFactory(new PropertyValueFactory<Transaction,Integer>("DrugId"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<Transaction,String>("Date"));
-        amountColumn.setCellValueFactory(new PropertyValueFactory<Transaction,Integer>("Quantity"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Transaction,Double>("price"));
+        medNameColumn.setCellValueFactory(new PropertyValueFactory<Transaction,String>("drugName"));
+        manuColumn.setCellValueFactory(new PropertyValueFactory<Transaction,String>("manuName"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<Transaction,Integer>("id"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Transaction,String>("date"));
+        amountColumn.setCellValueFactory(new PropertyValueFactory<Transaction,Integer>("quantity"));
         String pfName = "@" + LoginController.getProfName();
         profileName.setText(pfName);
         //transTable.setItems(list);
@@ -100,6 +100,7 @@ public class transactionController extends SwitchScene implements Initializable 
             System.out.println(tes.get("Amount"));
             trans.setPrice(Double.parseDouble(tes.get("Price").toString()));
             System.out.println(tes.get("Date"));
+            trans.setId(Integer.parseInt(tes.get("DrugId").toString()));
             System.out.println(tes.get("DrugId"));
 
             transTable.getItems().add(trans);

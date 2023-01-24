@@ -3,7 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -101,6 +103,38 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="271.0" layoutY="14.0" prefHeight="808.0" prefWidth="859.0" style="-fx-background-color: #fff;">
+         <children>
+            <TextField fx:id="custName" layoutX="48.0" layoutY="297.0" prefHeight="36.0" prefWidth="200.0" promptText="Customer Name">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="custPhone" layoutX="274.0" layoutY="297.0" prefHeight="36.0" prefWidth="200.0" promptText="Phone Number">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ChoiceBox fx:id="medSelectOption" layoutX="503.0" layoutY="297.0" prefHeight="36.0" prefWidth="200.0" />
+            <TextField fx:id="amount" layoutX="728.0" layoutY="297.0" prefHeight="36.0" prefWidth="84.0" promptText="Amount">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button layoutX="362.0" layoutY="382.0" mnemonicParsing="false" onAction="#sellDrugButton" prefHeight="36.0" prefWidth="136.0" text="Sell">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Text layoutX="248.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sell Mediceine to Customer">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+            <Separator layoutX="22.0" layoutY="204.0" prefHeight="3.0" prefWidth="789.0" />
+            <Text fx:id="amountErr" fill="#f20909" layoutX="725.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" />
          </children>
       </Pane>
    </children>

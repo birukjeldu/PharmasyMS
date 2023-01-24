@@ -5,6 +5,7 @@ import com.pharmacy.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -13,10 +14,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.security.cert.CertPathValidatorResult;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -24,10 +28,12 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import userInterface.Validator;
 
-public class addMedicineController extends SwitchScene {
+public class addMedicineController extends SwitchScene implements Initializable {
 
     @FXML
     private DatePicker expDate;
+    @FXML
+    private ChoiceBox<?> manuNameSelectOption;
     @FXML
     private TextField manuName;
     //@FXML
@@ -59,12 +65,14 @@ public class addMedicineController extends SwitchScene {
             System.out.println("nooo");
         }
         //Manufacture name validation
-        if (Validator.isValidString(manuName,manuName.getText())){
+       /* if (Validator.isValidString(manuName,manuName.getText())){
             drug.setManufacturer(manuName.getText());
             drugManuValid = true;
             System.out.println("yea it is validd");
         }else
-            drugManuValid = false;
+            drugManuValid = false; */
+        drug.setManufacturer(manuNameSelectOption.getValue().toString());
+        drugManuValid = true;
         //Description validation
         if (Validator.isValidString(medDescription,medDescription.getText())){
             drug.setDescription(medDescription.getText());
@@ -170,4 +178,31 @@ public class addMedicineController extends SwitchScene {
         System.out.println(jsonArray);
     }
 
+    public void ted(){
+        ArrayList listOfMed = new ArrayList<String>();
+        JSONParser jsonParser = new JSONParser();
+        Object object = null;
+        try {
+            object = jsonParser.parse(new FileReader("Supplier.json"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        JSONArray jsonArray1 = (JSONArray) object;
+        JSONObject obj = new JSONObject();
+        int size = jsonArray1.size();
+        for (int i = 0; i < size; i++) {
+            JSONObject tes = (JSONObject) jsonArray1.get(i);
+            listOfMed.add(tes.get("SupplierName"));
+
+        }
+        manuNameSelectOption.getItems().addAll(listOfMed);
+        System.out.println(listOfMed);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ted();
+    }
 }

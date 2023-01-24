@@ -8,10 +8,12 @@ public class Transaction {
     private String manuName;
     private double price =0;
     private int quantity;
-    private Date date;
+    private Date dateD;
+    private String date;
 
     public Transaction(){
-        date = new Date();
+        dateD = new Date();
+        date = dateD.toString();
     }
 
     public int getQuantity(){
@@ -22,12 +24,17 @@ public class Transaction {
         this.quantity = quantity;
     }
 
-    public Date getDate(){
+    public String getDate(){
         return date;
     }
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getDrugName() {
         return drugName;
     }

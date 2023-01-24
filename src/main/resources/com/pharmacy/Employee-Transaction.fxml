@@ -112,7 +112,7 @@
                   <Font name="Dubai Light" size="28.0" />
                </font>
             </Text>
-            <TableView layoutY="75.0" prefHeight="725.0" prefWidth="853.0">
+            <TableView fx:id="transTable" layoutY="75.0" prefHeight="725.0" prefWidth="853.0">
                <columns>
                   <TableColumn fx:id="idColumn" prefWidth="53.0" text="ID" />
                   <TableColumn fx:id="medNameColumn" prefWidth="172.0" text="Medicine Name" />

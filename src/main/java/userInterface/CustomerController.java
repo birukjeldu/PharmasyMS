@@ -88,8 +88,8 @@ public class CustomerController extends SwitchScene implements Initializable {
             cust.setFullName(tes.get("CustomerName").toString());
             //System.out.println(tes.get("Amount"));
             //cust.setEmail(tes.get("Amount").toString());
-            cust.setPhoneNumber(tes.get("PhoneNumber").toString());
-            cust.setSex(tes.get("Sex").toString().charAt(0));
+            cust.setPhoneNumber(tes.get("CustomerPhone").toString());
+            //cust.setSex(tes.get("Sex").toString().charAt(0));
 
             customerTable.getItems().add(cust);
             System.out.println("-------------------------------");
