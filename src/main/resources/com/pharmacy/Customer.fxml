@@ -113,17 +113,6 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="588.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Sale">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Button>
          </children>
       </VBox>
       <Pane layoutY="662.0" prefHeight="170.0" prefWidth="262.0" style="-fx-background-color: #2596be;">
@@ -148,12 +137,12 @@
             <TableView fx:id="customerTable" layoutY="137.0" prefHeight="672.0" prefWidth="853.0">
                <columns>
                   <TableColumn fx:id="nameColumn" prefWidth="110.0" text="Full Name" />
-                  <TableColumn fx:id="emailColumn" prefWidth="141.0" text="E-mail" />
-                  <TableColumn fx:id="sexColumn" prefWidth="59.0" text="Sex" />
+                  <TableColumn fx:id="emailColumn" prefWidth="141.0" text="E-mail" visible="false" />
+                  <TableColumn fx:id="sexColumn" prefWidth="59.0" text="Sex" visible="false" />
                   <TableColumn fx:id="phoneColumn" prefWidth="159.0" text="Phone Number" />
                   <TableColumn fx:id="presciptionColumn" prefWidth="159.0" text="Prescription" />
-                  <TableColumn fx:id="docNameColumn" prefWidth="95.0" text="Doctors Name" />
-                  <TableColumn fx:id="hospNameColumn" prefWidth="129.0" text="Hospital Name" />
+                  <TableColumn fx:id="docNameColumn" prefWidth="95.0" text="Doctors Name" visible="false" />
+                  <TableColumn fx:id="hospNameColumn" prefWidth="129.0" text="Hospital Name" visible="false" />
                </columns>
             </TableView>
             <Separator layoutX="-1.0" layoutY="60.0" prefHeight="3.0" prefWidth="853.0" />

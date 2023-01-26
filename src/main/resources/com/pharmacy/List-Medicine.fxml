@@ -119,17 +119,6 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button cache="true" contentDisplay="TOP" layoutX="10.0" layoutY="588.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="311.0" text="Sale">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Button>
          </children>
       </VBox>
       <Pane layoutY="662.0" prefHeight="170.0" prefWidth="262.0" style="-fx-background-color: #2596be;">
@@ -151,7 +140,7 @@
                   <Font name="Dubai Regular" size="28.0" />
                </font>
             </Text>
-            <TextField layoutX="29.0" layoutY="97.0" prefHeight="38.0" prefWidth="303.0" promptText="Search ......">
+            <TextField layoutX="29.0" layoutY="97.0" prefHeight="38.0" prefWidth="303.0" promptText="Search ......" visible="false">
                <font>
                   <Font size="18.0" />
                </font>
@@ -161,7 +150,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="659.0" layoutY="99.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="113.0" text="Remove Drug">
+            <Button layoutX="659.0" layoutY="99.0" mnemonicParsing="false" onAction="#deleteDrugButton" prefHeight="35.0" prefWidth="113.0" text="Remove Drug">
                <font>
                   <Font size="14.0" />
                </font>

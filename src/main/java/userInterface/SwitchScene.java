@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class SwitchScene {
     @FXML
-    private Button button;
+    protected Button button;
     @FXML
     private Button logout;
 

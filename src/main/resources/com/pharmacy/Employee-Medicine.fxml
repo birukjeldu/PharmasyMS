@@ -114,7 +114,7 @@
                   <Font name="Dubai Regular" size="28.0" />
                </font>
             </Text>
-            <TextField layoutX="275.0" layoutY="83.0" prefHeight="38.0" prefWidth="303.0" promptText="Search ......">
+            <TextField layoutX="275.0" layoutY="83.0" prefHeight="38.0" prefWidth="303.0" promptText="Search ......" visible="false">
                <font>
                   <Font size="18.0" />
                </font>

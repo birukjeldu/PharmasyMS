@@ -1,5 +1,6 @@
 package userInterface;
 
+import com.pharmacy.Drug;
 import com.pharmacy.Employee;
 import com.pharmacy.HelloApplication;
 import javafx.collections.FXCollections;
@@ -12,16 +13,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -263,6 +265,72 @@ public class EmployeeController extends SwitchScene implements Initializable {
 
         }
 
+    }
+
+    @FXML
+    void deleteEmployeeButton(ActionEvent event) throws IOException, ParseException {
+        Employee d = employeeTable.getSelectionModel().getSelectedItem();
+        if(d!=null){
+            if(displaly("Delete", "Are You Sure?")){
+                JSONParser jsonParser = new JSONParser();
+                Object object = jsonParser.parse(new FileReader("Employee.json"));
+                JSONArray jsonArray1 = (JSONArray) object;
+                JSONObject obj  = new JSONObject();
+                int size = jsonArray1.size();
+                for (int i = 0; i < size; i++) {
+                    JSONObject tes = (JSONObject) jsonArray1.get(i);
+                    if(tes.get("Username").equals(d.getUserName())){
+                        jsonArray1.remove(i);
+                        FileWriter file = new FileWriter("Employee.json");
+                        file.write(jsonArray1.toJSONString());
+                        file.flush();
+                        file.close();
+                        break;
+                    }
+
+                }
+                System.out.println(d.getUserName());
+                Stage stage = (Stage)button.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Employee.fxml"));
+                Scene root = new Scene(fxmlLoader.load());
+                stage.setTitle("Employee");
+                stage.setResizable(false);
+                stage.setScene(root);
+            }
+
+
+        }
+    }
+
+    public static boolean displaly(String title, String message){
+        AtomicBoolean answer = new AtomicBoolean(false);
+        Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle(title);
+        Label l1 = new Label();
+        l1.setText(message);
+        Button yes = new Button("Yes");
+        Button no = new Button("No");
+        yes.setOnAction(e->{
+            answer.set(true);
+            window.close();
+        });
+        no.setOnAction(e->{
+            answer.set(false);
+            window.close();
+        });
+        VBox vb = new VBox(5);
+        HBox hb = new HBox(15);
+        hb.setStyle("-fx-padding:40px");
+        vb.getChildren().addAll(l1);
+        hb.getChildren().addAll(l1,yes,no);
+        Scene scene = new Scene(hb);
+        window.setResizable(false);
+        window.setScene(scene);
+        window.showAndWait();
+
+
+        return answer.get();
     }
 
 }
